@@ -1,0 +1,96 @@
+{
+  "github_username": "Jackton-otieno",
+  "photo": "photo.png",
+  "ascii_width": 42,
+  "invert": false,
+  "birthday": "2000-01-01",
+  "sections": [
+    {
+      "title": "mr-robot@Jackton-otieno",
+      "rows": [
+        [
+          "OS",
+          "Windows 11, Linux"
+        ],
+        [
+          "Uptime",
+          "{uptime}"
+        ],
+        [
+          "Host",
+          "Kenya"
+        ],
+        [
+          "Kernel",
+          "Developer & SOC Analyst in training"
+        ],
+        [
+          "IDE",
+          "VS Code, Android Studio"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "Languages.Programming",
+          "Python, Kotlin, Java"
+        ],
+        [
+          "Languages.Computer",
+          "HTML, CSS, JSON"
+        ],
+        [
+          "Languages.Real",
+          "English, Swahili"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "Hobbies.Software",
+          "Security ops, Mobile apps"
+        ],
+        [
+          "Hobbies.Hardware",
+          "Always ready to learn"
+        ]
+      ]
+    },
+    {
+      "title": "Contact",
+      "rows": [
+        [
+          "GitHub",
+          "github.com/Jackton-otieno"
+        ],
+        [
+          "Email",
+          "you@example.com"
+        ],
+        [
+          "LinkedIn",
+          "your-linkedin"
+        ]
+      ]
+    },
+    {
+      "title": "GitHub Stats",
+      "rows": [
+        [
+          "Repos",
+          "{repos}  {{ Contributed: {contributed} }}"
+        ],
+        [
+          "Stars",
+          "{stars}  |  Followers: {followers}"
+        ],
+        [
+          "Commits (this year)",
+          "{commits}"
+        ]
+      ]
+    }
+  ]
+}

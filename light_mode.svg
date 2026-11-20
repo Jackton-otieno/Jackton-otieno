@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" font-family="ConsolasFallback,Consolas,'Courier New',monospace" width="1059px" height="530px" font-size="16px">
+<style>
+@font-face{src:local('Consolas'),local('Consolas Bold');font-family:'ConsolasFallback';font-display:swap;-webkit-size-adjust:109%;size-adjust:109%;}
+.k{fill:#953800}.v{fill:#0a3069}.d{fill:#c2cfde}.t{fill:#24292f;font-weight:bold}
+text,tspan{white-space:pre}
+</style>
+<rect width="1059px" height="530px" fill="#f6f8fa" rx="15"/>
+<text x="15" y="30" fill="#24292f" class="ascii">
+<tspan x="15" y="30">                                          </tspan>
+<tspan x="15" y="50">                                          </tspan>
+<tspan x="15" y="70">                                          </tspan>
+<tspan x="15" y="90">                                          </tspan>
+<tspan x="15" y="110">                                          </tspan>
+<tspan x="15" y="130">             -                    =       </tspan>
+<tspan x="15" y="150">      -==  = ---==***###+-==+-  -=--      </tspan>
+<tspan x="15" y="170">      ==-  -=-=#*#######%##+-=- -==-      </tspan>
+<tspan x="15" y="190">          = =#####*******#%%*-=           </tspan>
+<tspan x="15" y="210">      ===+=+#*#************%%%+====+=     </tspan>
+<tspan x="15" y="230">        -==#*#**##%####**##%%%%+   =      </tspan>
+<tspan x="15" y="250">       -+ +*##*#*-===++++*%%@%%*= -=      </tspan>
+<tspan x="15" y="270">      ====*##++*:::::.:-::#**%%*--++   =  </tspan>
+<tspan x="15" y="290">       =**+#%*+-.-*::::*=:*##%#+==+       </tspan>
+<tspan x="15" y="310">        #%%####*-:::::::-+%%%#####+       </tspan>
+<tspan x="15" y="330">        +%**###%%#++==+*%%%#####%#        </tspan>
+<tspan x="15" y="350">        ***--------------------*%#        </tspan>
+<tspan x="15" y="370">        ***...................:*%%        </tspan>
+<tspan x="15" y="390">        *##..................-=##%=       </tspan>
+<tspan x="15" y="410">       +*##:..............::-==##%*       </tspan>
+<tspan x="15" y="430">        *#%:...........::-=====%%%        </tspan>
+<tspan x="15" y="450">          %=::::::----==+++++=+@+         </tspan>
+<tspan x="15" y="470">          *#+++++++++*********##=         </tspan>
+<tspan x="15" y="490">           ----===========-----           </tspan>
+</text>
+<text x="443" y="30" fill="#24292f">
+<tspan x="443" y="30" class="t">mr-robot@Jackton-otieno</tspan><tspan class="d"> ------------------------------------</tspan>
+<tspan x="443" y="50" class="d">. </tspan><tspan class="k">OS</tspan><tspan class="d">: ................................... </tspan><tspan class="v">Windows 11, Linux</tspan>
+<tspan x="443" y="70" class="d">. </tspan><tspan class="k">Uptime</tspan><tspan class="d">: .................... </tspan><tspan class="v">26 years, 10 months, 19 days</tspan>
+<tspan x="443" y="90" class="d">. </tspan><tspan class="k">Host</tspan><tspan class="d">: ............................................. </tspan><tspan class="v">Kenya</tspan>
+<tspan x="443" y="110" class="d">. </tspan><tspan class="k">Kernel</tspan><tspan class="d">: ............. </tspan><tspan class="v">Developer &amp; SOC Analyst in training</tspan>
+<tspan x="443" y="130" class="d">. </tspan><tspan class="k">IDE</tspan><tspan class="d">: ............................ </tspan><tspan class="v">VS Code, Android Studio</tspan>
+<tspan x="443" y="150"> </tspan>
+<tspan x="443" y="170" class="d">. </tspan><tspan class="k">Languages.Programming</tspan><tspan class="d">: ............. </tspan><tspan class="v">Python, Kotlin, Java</tspan>
+<tspan x="443" y="190" class="d">. </tspan><tspan class="k">Languages.Computer</tspan><tspan class="d">: ..................... </tspan><tspan class="v">HTML, CSS, JSON</tspan>
+<tspan x="443" y="210" class="d">. </tspan><tspan class="k">Languages.Real</tspan><tspan class="d">: ........................ </tspan><tspan class="v">English, Swahili</tspan>
+<tspan x="443" y="230"> </tspan>
+<tspan x="443" y="250" class="d">. </tspan><tspan class="k">Hobbies.Software</tspan><tspan class="d">: ............. </tspan><tspan class="v">Security ops, Mobile apps</tspan>
+<tspan x="443" y="270" class="d">. </tspan><tspan class="k">Hobbies.Hardware</tspan><tspan class="d">: ................. </tspan><tspan class="v">Always ready to learn</tspan>
+<tspan x="443" y="290"> </tspan>
+<tspan x="443" y="310" class="t">Contact</tspan><tspan class="d"> ----------------------------------------------------</tspan>
+<tspan x="443" y="330" class="d">. </tspan><tspan class="k">GitHub</tspan><tspan class="d">: ....................... </tspan><tspan class="v">github.com/Jackton-otieno</tspan>
+<tspan x="443" y="350" class="d">. </tspan><tspan class="k">Email</tspan><tspan class="d">: .................................. </tspan><tspan class="v">you@example.com</tspan>
+<tspan x="443" y="370" class="d">. </tspan><tspan class="k">LinkedIn</tspan><tspan class="d">: ................................. </tspan><tspan class="v">your-linkedin</tspan>
+<tspan x="443" y="390"> </tspan>
+<tspan x="443" y="410" class="t">GitHub Stats</tspan><tspan class="d"> -----------------------------------------------</tspan>
+<tspan x="443" y="430" class="d">. </tspan><tspan class="k">Repos</tspan><tspan class="d">: ............................ </tspan><tspan class="v">-  { Contributed: - }</tspan>
+<tspan x="443" y="450" class="d">. </tspan><tspan class="k">Stars</tspan><tspan class="d">: ............................... </tspan><tspan class="v">-  |  Followers: -</tspan>
+<tspan x="443" y="470" class="d">. </tspan><tspan class="k">Commits (this year)</tspan><tspan class="d">: .................................. </tspan><tspan class="v">-</tspan>
+</text></svg>
