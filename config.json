@@ -13,29 +13,34 @@
   "ascii_width": 56,
   "invert": false,
   "invert_on_dark": false,
+  "birthday": "2000-01-01",
   "sections": [
     {
       "title": "mr-robot@Jackton-otieno",
       "rows": [
         [
           "OS",
-          "Windows 11, kali Linux"
-        ],
-        [
-          "Uptime",
-          "{uptime}"
+          "Windows 11, Kali Linux"
         ],
         [
           "Host",
-          "Kenya"
+          "University of Nairobi (Student)"
         ],
         [
           "Kernel",
-          "Developer & SOC Analyst in training"
+          "Full Stack Engineer"
+        ],
+        [
+          "Kernel.Security",
+          "SOC Analyst in training"
         ],
         [
           "IDE",
-          "VS Code, Android Studio , Cursor ,Windsurf ,Antigravity"
+          "VS Code, Android Studio, Cursor"
+        ],
+        [
+          "IDE.AI",
+          "Windsurf, Antigravity"
         ],
         [
           "",
@@ -43,15 +48,27 @@
         ],
         [
           "Languages.Programming",
-          "Django, FastApi, Kotlin, Java Spring Boot ,Golang ,"
+          "Python, Kotlin, Java, Go, Dart"
         ],
         [
           "Languages.Computer",
-          "HTML, CSS, JSON ,Dart and Flutter ,React Native,"
+          "HTML, CSS, JSON"
         ],
         [
           "Languages.Real",
           "English, Swahili"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "Frameworks.Backend",
+          "Django, FastAPI, Spring Boot"
+        ],
+        [
+          "Frameworks.Mobile",
+          "Flutter, React Native"
         ],
         [
           "",
@@ -80,7 +97,7 @@
         ],
         [
           "LinkedIn",
-          "https://www.linkedin.com/in/mr-robot-867336305/"
+          "linkedin.com/in/mr-robot-867336305"
         ]
       ]
     },

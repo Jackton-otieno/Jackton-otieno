@@ -220,7 +220,7 @@ def build_svg(art, info, theme):
 
 def main():
     values = github_stats(CFG["github_username"])
-    values["uptime"] = uptime(CFG["birthday"])
+    values["uptime"] = uptime(CFG["birthday"]) if CFG.get("birthday") else "-"
     info = panel_lines(values)
     photo = load_photo()
     inv = CFG.get("invert", False)
