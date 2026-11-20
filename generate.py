@@ -10,7 +10,7 @@ import urllib.request
 from datetime import date
 from html import escape
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CFG = json.load(open(os.path.join(HERE, "config.json"), encoding="utf-8"))
@@ -30,17 +30,67 @@ THEMES = {
 }
 
 
+# ---------- photo ----------
+def load_photo():
+    """'avatar' = use your current GitHub profile picture; otherwise a file in the repo."""
+    if CFG["photo"] == "avatar":
+        try:
+            url = f"https://github.com/{CFG['github_username']}.png?size=460"
+            data = urllib.request.urlopen(url, timeout=30).read()
+            with open(os.path.join(HERE, "avatar.png"), "wb") as f:
+                f.write(data)
+            path = os.path.join(HERE, "avatar.png")
+        except Exception as e:
+            print("Avatar download failed, using photo.png:", e)
+            path = os.path.join(HERE, "photo.png")
+    else:
+        path = os.path.join(HERE, CFG["photo"])
+    img = ImageOps.exif_transpose(Image.open(path)).convert("RGBA")
+    if CFG.get("crop"):  # [left, top, right, bottom] as fractions of the photo
+        l, t, r, b = CFG["crop"]
+        img = img.crop((int(l * img.width), int(t * img.height), int(r * img.width), int(b * img.height)))
+    if CFG.get("remove_background", False):
+        img = remove_background(img, CFG.get("background_tolerance", 40))
+    return img
+
+
+def remove_background(img, tol):
+    """Flood-fills from every edge pixel: plain backgrounds touching the border become transparent."""
+    rgb = img.convert("RGB").filter(ImageFilter.SMOOTH)
+    w, h = rgb.size
+    marker = (255, 0, 255)
+    work = rgb.copy()
+    for x, y in [(x, 0) for x in range(0, w, 8)] + [(x, h - 1) for x in range(0, w, 8)] + \
+                [(0, y) for y in range(0, h, 8)] + [(w - 1, y) for y in range(0, h, 8)]:
+        if work.getpixel((x, y)) != marker:
+            ImageDraw.floodfill(work, (x, y), marker, thresh=tol)
+    mask = Image.eval(ImageChops.difference(work, Image.new("RGB", (w, h), marker)).convert("L"),
+                      lambda v: 0 if v == 0 else 255)
+    mask = mask.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.MaxFilter(3))
+    out = img.copy()
+    out.putalpha(ImageChops.multiply(img.getchannel("A"), mask))
+    return out
+
+
 # ---------- ASCII art ----------
-def ascii_art(path, width, invert):
-    src = ImageOps.exif_transpose(Image.open(path)).convert("RGBA")
+def ascii_art(src, width, invert):
     # transparent pixels (photo with background removed) become blank space
     white = Image.new("RGBA", src.size, (255, 255, 255, 255))
     alpha = src.getchannel("A")
     img = Image.alpha_composite(white, src).convert("L")
-    img = ImageOps.autocontrast(img, cutoff=2)
+    # local contrast boost: brings out eyes, glasses and smile before shrinking
+    lc = CFG.get("local_contrast", 0)
+    if lc:
+        img = img.filter(ImageFilter.UnsharpMask(radius=max(2, img.width // 25), percent=lc, threshold=0))
     h = max(1, int(img.height / img.width * width * (CHAR_W / LINE_H)))
-    img = img.resize((width, h))
+    img = img.resize((width, h), Image.LANCZOS)
     alpha = alpha.resize((width, h))
+    # stretch contrast using only the subject's pixels, so faces keep their detail
+    mask = alpha.point(lambda v: 255 if v >= 128 else 0)
+    if CFG.get("contrast", "equalize") == "equalize":
+        img = ImageOps.equalize(img, mask=mask)
+    else:
+        img = ImageOps.autocontrast(img, cutoff=2, mask=mask)
     px, al = img.load(), alpha.load()
     lines = []
     for y in range(h):
@@ -53,8 +103,13 @@ def ascii_art(path, width, invert):
             if invert:
                 v = 1 - v
             row += RAMP[min(len(RAMP) - 1, int(v * len(RAMP)))]
-        lines.append(row)
-    return lines
+        lines.append(row.rstrip())
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+    w = max(len(l) for l in lines)
+    return [l.ljust(w) for l in lines]
 
 
 # ---------- GitHub stats ----------
@@ -167,12 +222,11 @@ def main():
     values = github_stats(CFG["github_username"])
     values["uptime"] = uptime(CFG["birthday"])
     info = panel_lines(values)
-    art = ascii_art(os.path.join(HERE, CFG["photo"]), CFG["ascii_width"], CFG.get("invert", False))
+    photo = load_photo()
     inv = CFG.get("invert", False)
     for theme in THEMES:
         # on the dark card, bright pixels get the dense characters (and vice versa)
-        a = ascii_art(os.path.join(HERE, CFG["photo"]), CFG["ascii_width"],
-                      inv if theme == "light" else not inv)
+        a = ascii_art(photo, CFG["ascii_width"], inv if theme == "light" or not CFG.get("invert_on_dark", True) else not inv)
         with open(os.path.join(HERE, f"{theme}_mode.svg"), "w", encoding="utf-8") as f:
             f.write(build_svg(a, info, theme))
         print(f"wrote {theme}_mode.svg")

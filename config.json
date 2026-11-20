@@ -1,8 +1,18 @@
 {
   "github_username": "Jackton-otieno",
-  "photo": "photo.png",
-  "ascii_width": 42,
+  "photo": "photo.jpg",
+  "remove_background": true,
+  "background_tolerance": 40,
+  "crop": [
+    0.2,
+    0.06,
+    0.8,
+    0.48
+  ],
+  "contrast": "auto",
+  "ascii_width": 56,
   "invert": false,
+  "invert_on_dark": false,
   "birthday": "2000-01-01",
   "sections": [
     {
@@ -92,5 +102,6 @@
         ]
       ]
     }
-  ]
+  ],
+  "local_contrast": 250
 }
