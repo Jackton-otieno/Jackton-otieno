@@ -13,14 +13,13 @@
   "ascii_width": 56,
   "invert": false,
   "invert_on_dark": false,
-  "birthday": "2000-01-01",
   "sections": [
     {
       "title": "mr-robot@Jackton-otieno",
       "rows": [
         [
           "OS",
-          "Windows 11, Linux"
+          "Windows 11, kali Linux"
         ],
         [
           "Uptime",
@@ -36,7 +35,7 @@
         ],
         [
           "IDE",
-          "VS Code, Android Studio"
+          "VS Code, Android Studio , Cursor ,Windsurf ,Antigravity"
         ],
         [
           "",
@@ -44,11 +43,11 @@
         ],
         [
           "Languages.Programming",
-          "Python, Kotlin, Java"
+          "Django, FastApi, Kotlin, Java Spring Boot ,Golang ,"
         ],
         [
           "Languages.Computer",
-          "HTML, CSS, JSON"
+          "HTML, CSS, JSON ,Dart and Flutter ,React Native,"
         ],
         [
           "Languages.Real",
@@ -77,11 +76,11 @@
         ],
         [
           "Email",
-          "you@example.com"
+          "odongojacktonb@gmail.com"
         ],
         [
           "LinkedIn",
-          "your-linkedin"
+          "https://www.linkedin.com/in/mr-robot-867336305/"
         ]
       ]
     },
